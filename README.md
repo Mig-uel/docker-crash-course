@@ -63,3 +63,40 @@ The next layers are built on top of the parent image, adding our application cod
 When we work with Docker, you'll also work with Docker Hub, which is a public repository for Docker images. You can find official images for popular software and libraries, as well as share your own images with the community.
 
 We can get parent images from Docker Hub.
+
+## Dockerfile
+
+A Dockerfile is a text file that contains a series of instructions to build a Docker image. Each instruction in the Dockerfile creates a new layer in the image, allowing for efficient storage and sharing.
+
+The Dockerfile specifies the base image, application code, dependencies, and configurations needed to create a custom Docker image. It is used to automate the process of building images, ensuring consistency and reproducibility.
+
+```dockerfile
+# Use an official Node.js runtime as a parent image
+FROM node:17
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy files from the host to the container
+COPY . .
+
+# Install dependencies
+RUN npm install
+
+# Expose a port for the application
+EXPOSE 3000
+
+# Define the command to run the application
+CMD ["npm", "start"]
+```
+
+Each instruction in the Dockerfile serves a specific purpose:
+
+- `FROM`: Specifies the base image to use for the Docker image.
+- `WORKDIR`: Sets the working directory inside the container where subsequent commands will be executed.
+- `COPY`: Copies files from the host system to the container.
+- `RUN`: Executes a command inside the container, such as installing dependencies.
+- `EXPOSE`: Informs Docker that the container listens on a specific port at runtime.
+- `CMD`: Specifies the command to run when the container starts, such as starting the application.
+
+When you build an image using a Dockerfile, Docker processes each instruction in order, creating a new layer for each one. This allows for efficient caching and reuse of layers, speeding up the build process and reducing the size of the final image.
