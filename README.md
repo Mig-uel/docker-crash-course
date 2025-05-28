@@ -49,3 +49,17 @@ Can be started, stopped, and managed independently
 - **Isolation**: Each container runs in its own environment, preventing conflicts between applications and dependencies.
 - **Scalability**: Docker makes it easy to scale applications by running multiple containers and managing them with orchestration tools.
 - **Efficiency**: Containers share the host system's kernel, making them lightweight and fast to start compared to traditional virtual machines.
+
+## Docker Images (continued)
+
+Docker images are made up from several layers, each representing a change or addition to the image. When you build an image, Docker creates a new layer for each instruction in the Dockerfile. This layered architecture allows for efficient storage and sharing of images.
+
+Each layer is cached, so if you rebuild an image with the same instructions, Docker can reuse the cached layers instead of rebuilding them from scratch. This speeds up the build process and reduces the amount of data that needs to be transferred when sharing images.
+
+Typically, the first layer starts with what is known as a parent image, which typically contains the operating system and any necessary dependencies. From there, we can add our application code, libraries, and configurations to create a custom image.
+
+The next layers are built on top of the parent image, adding our application code, dependencies, and configurations.
+
+When we work with Docker, you'll also work with Docker Hub, which is a public repository for Docker images. You can find official images for popular software and libraries, as well as share your own images with the community.
+
+We can get parent images from Docker Hub.
