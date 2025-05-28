@@ -100,3 +100,28 @@ Each instruction in the Dockerfile serves a specific purpose:
 - `CMD`: Specifies the command to run when the container starts, such as starting the application.
 
 When you build an image using a Dockerfile, Docker processes each instruction in order, creating a new layer for each one. This allows for efficient caching and reuse of layers, speeding up the build process and reducing the size of the final image.
+
+## Building and Running Docker Images
+
+To build and run Docker images, you typically follow these steps:
+
+1. **Create a Dockerfile**: Write a Dockerfile that defines the base image, application code, dependencies, and configurations needed to build your custom image.
+2. **Build the Image**: Use the `docker build` command to create a Docker image from the Dockerfile. This command processes each instruction in the Dockerfile and creates a new image with the specified layers.
+   ```bash
+   docker build -t my-app .
+   ```
+   The `-t` flag allows you to tag the image with a name (e.g., `my-app`), and the `.` indicates that the Dockerfile is in the current directory.
+3. **Run the Container**: Use the `docker run` command to create and start a container from the built image. This command runs the application defined in the Dockerfile.
+   ```bash
+   docker run -p 3000:3000 my-app
+   ```
+   The `-p` flag maps a port on the host machine (3000) to a port in the container (3000), allowing you to access the application running inside the container.
+4. **Access the Application**: Once the container is running, you can access the application by navigating to `http://localhost:3000` in your web browser.
+5. **Stop the Container**: You can stop the running container using the `docker stop` command followed by the container ID or name.
+   ```bash
+   docker stop <container_id>
+   ```
+6. **Remove the Container**: If you want to remove the stopped container, you can use the `docker rm` command.
+   ```bash
+   docker rm <container_id>
+   ```
