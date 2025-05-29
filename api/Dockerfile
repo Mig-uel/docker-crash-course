@@ -2,6 +2,8 @@
 # This Dockerfile uses the official Node.js image as a base
 FROM node:23-alpine
 
+RUN npm install -g nodemon
+
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -43,5 +45,5 @@ ENV PORT=3000
 # This command will run the application when the container starts
 
 # Commands to run the application
-CMD [ "node", "app.js" ]
+CMD [ "npm","run","dev" ]
 
