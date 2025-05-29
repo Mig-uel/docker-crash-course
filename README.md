@@ -125,3 +125,52 @@ To build and run Docker images, you typically follow these steps:
    ```bash
    docker rm my-app
    ```
+
+## Useful Docker Commands
+
+Here are some useful Docker commands to manage images and containers:
+
+- **List Docker Images**: To see all the images on your system, use:
+  ```bash
+  docker images
+  ```
+- **List Running Containers**: To see all running containers, use:
+  ```bash
+  docker ps
+  ```
+- **List All Containers**: To see all containers, including stopped ones, use:
+  ```bash
+  docker ps -a
+  ```
+- **Remove a Docker Image**: To remove an image, use:
+  ```bash
+  docker rmi my-app
+  ```
+- **Remove a Docker Container**: To remove a container, use:
+  ```bash
+  docker rm my-app
+  ```
+- **View Container Logs**: To view the logs of a running container, use:
+  ```bash
+  docker logs my-app
+  ```
+- **Execute a Command in a Running Container**: To run a command inside a running container, use:
+  ```bash
+  docker exec -it my-app bash
+  ```
+- **Build an Image**: To build an image from a Dockerfile, use:
+  ```bash
+  docker build -t my-app .
+  ```
+- **Run a Container**: To run a container from an image, use:
+  ```bash
+  docker run -p 3000:3000 --name my-app my-app
+  ```
+- **Stop a Container**: To stop a running container, use:
+  ```bash
+  docker stop my-app
+  ```
+- **Remove All Stopped Containers**: To remove all stopped containers, use:
+  ```bash
+  docker container prune
+  ```
