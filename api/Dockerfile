@@ -20,16 +20,22 @@ ENV PORT=3000
 
 # Build the application (if necessary)
 # RUN npm run build
+
 # If using TypeScript, compile it
 # RUN npm run compile
+
 # If using a specific build command, uncomment the line below
 # RUN npm run build
+
 # If using a specific start command, uncomment the line below
 # RUN npm run start
+
 # If using a specific test command, uncomment the line below
 # RUN npm run test
+
 # If using a specific lint command, uncomment the line below
 # RUN npm run lint
+
 # Start the application
 # This command will run the application when the container starts
 
