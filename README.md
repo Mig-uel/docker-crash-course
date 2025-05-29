@@ -174,3 +174,16 @@ Here are some useful Docker commands to manage images and containers:
   ```bash
   docker container prune
   ```
+
+## Layer Caching
+
+Docker uses a layer caching mechanism to optimize the build process of images. Each instruction in a Dockerfile creates a new layer, and Docker caches these layers to speed up subsequent builds.
+
+When you build an image, Docker checks if it has already built a layer with the same content. If it finds a cached layer, it reuses it instead of rebuilding it, which saves time and resources.
+
+This caching mechanism is particularly useful when you make changes to your application code or dependencies. Docker will only rebuild the layers that have changed, allowing you to quickly iterate on your application without having to rebuild the entire image from scratch.
+
+This is especially beneficial for large images with many dependencies, as it reduces the amount of data that needs to be transferred and speeds up the build process.
+
+**Reminder**: every line that we write in the Dockerfile creates a new layer. Each line adds a new layer to the image.
+
