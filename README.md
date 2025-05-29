@@ -113,15 +113,15 @@ To build and run Docker images, you typically follow these steps:
    The `-t` flag allows you to tag the image with a name (e.g., `my-app`), and the `.` indicates that the Dockerfile is in the current directory.
 3. **Run the Container**: Use the `docker run` command to create and start a container from the built image. This command runs the application defined in the Dockerfile.
    ```bash
-   docker run -p 3000:3000 my-app
+   docker run -p 3000:3000 --name my-app my-app
    ```
    The `-p` flag maps a port on the host machine (3000) to a port in the container (3000), allowing you to access the application running inside the container.
 4. **Access the Application**: Once the container is running, you can access the application by navigating to `http://localhost:3000` in your web browser.
 5. **Stop the Container**: You can stop the running container using the `docker stop` command followed by the container ID or name.
    ```bash
-   docker stop <container_id>
+   docker stop my-app
    ```
 6. **Remove the Container**: If you want to remove the stopped container, you can use the `docker rm` command.
    ```bash
-   docker rm <container_id>
+   docker rm my-app
    ```
