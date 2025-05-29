@@ -187,3 +187,22 @@ This is especially beneficial for large images with many dependencies, as it red
 
 **Reminder**: every line that we write in the Dockerfile creates a new layer. Each line adds a new layer to the image.
 
+## Versioning Docker Images
+
+When working with Docker images, it's important to manage versions effectively. This allows you to track changes, roll back to previous versions, and ensure consistency across different environments.
+
+### Tagging Images
+
+You can tag Docker images with version numbers or descriptive names to indicate their purpose or state. For example, you might tag an image as `my-app:1.0` for the first version of your application.
+
+To tag an image, you can use the `docker build` command with the `-t` flag:
+
+```bash
+docker build -t my-app:1.0 .
+```
+
+You can also add additional tags to the same image:
+
+```bash
+docker tag my-app:1.0 my-app:latest
+```
