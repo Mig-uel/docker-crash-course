@@ -244,3 +244,15 @@ This command:
 - Mounts the specified absolute path on the host to the `/data` directory inside the container.
 - Runs the container in detached mode (`-d`).
 - Automatically removes the container when it stops (`--rm`).
+
+### Excluding Files from Volumes
+
+Sometimes, you may want to exclude certain files or directories from being in synced with the volume. For example, you might want to exclude the `node_modules` directory from being synced with the volume to avoid conflicts with dependencies installed inside the container.
+
+A way to do this is to create a more specific volume mount to the directories you want to persist, rather than mounting the entire application directory.
+
+For example:
+
+```bash
+docker run --name my-app-container -p 3000:3000 -v absolute/path/on/host/app:/app -v absolute/path/on/host/data:/data -d --rm my-app
+```
