@@ -8,5 +8,15 @@ services:
       - ./api:/app
       - app-node-modules:/app/node_modules
 
+  blog:
+    build: ./blog
+    container_name: blog_c
+    ports:
+      - '5173:5173'
+    volumes:
+      - ./blog:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
 volumes:
   app-node-modules:
