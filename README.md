@@ -228,3 +228,19 @@ docker run -v my-volume:/data my-app
 ```
 
 This command mounts the `my-volume` volume to the `/data` directory inside the container, allowing the application to read and write data to that volume.
+
+### Creating a Volume When Running a Container
+
+You can also create a volume on the fly when running a container by using the `-v` flag without specifying an existing volume:
+
+```bash
+docker run --name my-app-container -p 3000:3000 -v absolute/path/on/host:/data -d --rm my-app
+```
+
+This command:
+
+- Names the container `my-app-container`.
+- Maps port 3000 on the host to port 3000 in the container.
+- Mounts the specified absolute path on the host to the `/data` directory inside the container.
+- Runs the container in detached mode (`-d`).
+- Automatically removes the container when it stops (`--rm`).
