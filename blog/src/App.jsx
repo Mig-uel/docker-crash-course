@@ -4,7 +4,7 @@ function App() {
   const [blogs, setBlogs] = useState([])
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('http://localhost:3000')
       .then((res) => res.json())
       .then((data) => setBlogs(data))
   })
